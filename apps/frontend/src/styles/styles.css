@@ -136,11 +136,34 @@
   }
 }
 
+@layer base {
+  body {
+    @apply bg-[#f8f9fa]; /* Light gray background */
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold text-blue-700;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold text-gray-700;
+  }
+}
+
+
 /** Style the placeholder table according to Figma */
 .table-placeholder {
   width: 100%!important;
   text-align: left!important;
 }
+
+.table-placeholder tbody tr:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+
 
 tbody tr td{
   border-left:0.93px;

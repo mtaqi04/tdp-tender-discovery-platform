@@ -9,6 +9,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+    <div className="min-h-screen bg-[#f8f9fa]">
+      {/* App content */}
+    </div>
   const { auth, setAuth } = useAuth();
   const [appLoading, setAppLoading] = useState<boolean>(true);
 
@@ -48,6 +51,36 @@ function App() {
       <ToastContainer />
     </>
   );
+  return (
+    <>
+      {appLoading ? (
+        <div className="flex items-center justify-center h-screen bg-gray-100">
+          <h2 className="text-xl font-semibold text-blue-600">Loading your dashboard...</h2>
+        </div>
+      ) : (
+        <>
+          <AppRoutes />
+          <ToastContainer />
+        </>
+      )}
+    </>
+  );
+
+  return (
+    <div className="font-sans bg-gray-50 min-h-screen text-gray-800">
+      {appLoading ? (
+        <div className="flex items-center justify-center h-screen">
+          <h2 className="text-xl font-semibold text-blue-600">Loading...</h2>
+        </div>
+      ) : (
+        <>
+          <AppRoutes />
+          <ToastContainer />
+        </>
+      )}
+    </div>
+  );
+
 }
 
 export default App;
